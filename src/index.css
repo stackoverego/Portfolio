@@ -1,0 +1,27 @@
+:root {
+  --bg-black: #000000;
+  --text-white: #ffffff;
+  --brand-red: #ff0000;
+  --font-primary: 'Gilroy-Bold', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('./assets/Gilroy-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
