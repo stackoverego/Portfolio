@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 :root {
   --bg-black: #000000;
   --text-white: #ffffff;
-  --brand-red: #ff0000;
+  --brand-red: #d10000;
   --font-primary: 'Gilroy-Bold', sans-serif;
 }
 

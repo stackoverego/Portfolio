@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'gilroy';
+    src: url('./assets/fonts/Hardbop-Bold.otf') format('opentype');
+}
+
 /* Intro Component */
 .intro-container {
     position: fixed;
@@ -66,14 +71,18 @@
     gap: 1rem;
     text-transform: uppercase;
     font-size: 0.875rem;
-    font-weight: 800;
+    font-weight: 500;
+    /* Regular weight for a cleaner look */
     list-style: none;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.15em;
 }
 
 @media (min-width: 768px) {
     .nav-links {
         gap: 4rem;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        /* Slightly smaller for elegance */
     }
 }
 
@@ -163,38 +172,137 @@
 }
 
 .hero-text-container {
-    max-width: 80rem;
-    width: 100%;
-    text-align: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 
+/* Hero Effect */
 .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
-    line-height: 1.25;
-    letter-spacing: -0.025em;
+    font-size: 10rem;
+    display: flex;
+    align-items: center;
+    gap: 0.02em;
+    user-select: none;
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
+    font-family: 'gilroy', sans-serif;
+    font-weight: 500;
 }
 
 @media (min-width: 768px) {
     .hero-title {
-        font-size: 4.5rem;
+        font-size: 18vw;
     }
 }
 
 @media (min-width: 1024px) {
     .hero-title {
-        font-size: 6rem;
+        font-size: 22vw;
     }
 }
 
-.hero-line {
-    display: block;
+@keyframes colorchange {
+    from {
+        color: rgb(255, 138, 138);
+    }
+
+    to {
+        color: red;
+    }
 }
 
-.hero-line-gray {
-    color: #6b7280;
+.stretch {
+    transition: transform 0.8s ease, color 0.8s ease;
+    display: inline-block;
+}
+
+.stretch:hover {
+    transform: scaleY(1.3);
+    animation: colorchange 2s ease forwards;
+}
+
+.fly {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('./assets/tryyygif1.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.r-bg {
+    background-color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.1em;
+    border-radius: 4px;
+    margin: 0 0.05em;
+}
+
+.fly:hover {
+    transform: none;
+}
+
+.corner-text {
+    position: absolute;
+    font-family: 'gilroy', sans-serif;
+    font-weight: 500;
+    font-size: 4rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.4);
+    /* Lower opacity to avoid overwhelming the center */
+    text-transform: uppercase;
+    z-index: 10;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .corner-text {
+        font-size: 10vw;
+    }
+}
+
+.corner-text-tl {
+    top: 3.3rem;
+    left: 4rem;
+}
+
+.corner-text-tr {
+    top: 3.3rem;
+    right: 4rem;
+    text-align: right;
+    color: var(--brand-red);
+}
+
+.char-tr {
+    opacity: 0;
+}
+
+.corner-text-bl-flicker {
+    bottom: 3rem;
+    left: 4rem;
+    color: var(--brand-red);
+}
+
+.char-bl-flicker {
+    opacity: 0;
+}
+
+.corner-text-br {
+    bottom: 3rem;
+    right: 4rem;
+    text-align: right;
 }
 
 .hero-overlay {
