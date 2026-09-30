@@ -1,10 +1,22 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+=======
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> deb721e (feat: add new components and assets for profile and contact sections)
 
 :root {
   --bg-black: #000000;
   --text-white: #ffffff;
   --brand-red: #d10000;
+<<<<<<< HEAD
   --font-primary: 'Gilroy-Bold', sans-serif;
+=======
+  --font-primary: "Gilroy-Bold", sans-serif;
+>>>>>>> deb721e (feat: add new components and assets for profile and contact sections)
 }
 
 * {
@@ -22,8 +34,16 @@ body {
 }
 
 @font-face {
+<<<<<<< HEAD
   font-family: 'Gilroy-Bold';
   src: url('./assets/Gilroy-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
+=======
+  font-family: "Gilroy-Bold";
+  src: url("./assets/Gilroy-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+>>>>>>> deb721e (feat: add new components and assets for profile and contact sections)
