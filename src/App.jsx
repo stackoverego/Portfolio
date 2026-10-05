@@ -20,6 +20,7 @@ function App() {
     const blackBg = overlay.querySelector(".overlay-backdrop");
     const redBox = overlay.querySelector(".overlay-box");
     const tl = gsap.timeline();
+    const scrollBehavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
     const initialStats = rect
       ? {
           top: rect.top,
@@ -53,9 +54,9 @@ function App() {
       .add(() => {
         const target = document.getElementById(targetId);
         if (target) {
-          target.scrollIntoView({ behavior: "auto" });
+          target.scrollIntoView({ behavior: scrollBehavior });
         } else if (targetId === "home") {
-          window.scrollTo(0, 0);
+          window.scrollTo({ top: 0, behavior: scrollBehavior });
         }
       })
       .to([redBox, blackBg], {

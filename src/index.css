@@ -5,10 +5,26 @@
 @tailwind utilities;
 
 :root {
-  --bg-black: #000000;
-  --text-white: #ffffff;
-  --brand-red: #d10000;
+  --bg-black: #1c2226;
+  --text-white: #f2f4f5;
+  --brand-red: #4c9cff;
+  --theme-accent-bright: #f0ca68;
+  --theme-surface: #2a3136;
+  --theme-surface-raised: #343d43;
+  --theme-bg-rgb: 28, 34, 38;
+  --theme-accent-rgb: 76, 156, 255;
+  --theme-highlight-rgb: 240, 202, 104;
   --font-primary: "Gilroy-Bold", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 * {

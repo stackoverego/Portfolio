@@ -31,19 +31,19 @@ export default function ContactForm() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen overflow-hidden bg-[#090909] px-4 py-20 text-white sm:px-6 lg:px-10"
+      className="relative min-h-screen overflow-hidden bg-[#1c2226] px-4 py-20 text-[#f2f4f5] sm:px-6 lg:px-10"
     >
-      <div className="pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full bg-red-600/15 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-red-500/10 blur-[110px]" />
+      <div className="pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full bg-blue-400/15 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-amber-300/10 blur-[110px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="relative overflow-hidden rounded-[30px] border border-red-500/20 bg-[#120909]/90 shadow-[0_0_60px_rgba(239,68,68,0.12)] backdrop-blur-sm">
-          <div className="pointer-events-none absolute -bottom-24 -left-20 h-[360px] w-[360px] rounded-full bg-red-500/15 blur-[90px]" />
+        <div className="relative overflow-hidden rounded-[30px] border border-blue-300/20 bg-[#2a3136]/90 shadow-[0_0_60px_rgba(76,156,255,0.12)] backdrop-blur-sm">
+          <div className="pointer-events-none absolute -bottom-24 -left-20 h-[360px] w-[360px] rounded-full bg-blue-400/15 blur-[90px]" />
 
           <div className="relative z-10 grid gap-8 p-6 sm:p-10 lg:grid-cols-12 lg:gap-12 lg:p-14">
             <div className="flex flex-col justify-between space-y-8 lg:col-span-5">
               <div className="space-y-6">
-                <span className="inline-flex rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-red-300">
+                <span className="inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-blue-200">
                   Contact
                 </span>
 
@@ -53,21 +53,21 @@ export default function ContactForm() {
 
                 <div className="space-y-4 pt-2">
                   <div className="flex items-center space-x-3 text-sm font-medium text-zinc-200 sm:text-base">
-                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-red-400/60 bg-red-500/15 text-red-300">
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-blue-300/60 bg-blue-400/15 text-blue-200">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
                     <span>Fast response within 24 hours</span>
                   </div>
 
                   <div className="flex items-center space-x-3 text-sm font-medium text-zinc-200 sm:text-base">
-                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-red-400/60 bg-red-500/15 text-red-300">
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-blue-300/60 bg-blue-400/15 text-blue-200">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
                     <span>Available for freelance & contract roles</span>
                   </div>
 
                   <div className="flex items-center space-x-3 text-sm font-medium text-zinc-200 sm:text-base">
-                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-red-400/60 bg-red-500/15 text-red-300">
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-blue-300/60 bg-blue-400/15 text-blue-200">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
                     <span>End-to-end design & development</span>
@@ -78,7 +78,7 @@ export default function ContactForm() {
               <div className="space-y-4 pt-8 lg:pt-12">
                 <a
                   href="mailto:parthpatiljob@gmail.com"
-                  className="text-sm font-medium text-red-300 underline decoration-red-400/60 underline-offset-4 transition-colors hover:text-red-200 sm:text-base"
+                  className="text-sm font-medium text-blue-200 underline decoration-blue-300/60 underline-offset-4 transition-colors hover:text-amber-200 sm:text-base"
                 >
                   parthpatiljob@gmail.com
                 </a>
@@ -90,7 +90,7 @@ export default function ContactForm() {
                 <div>
                   <a
                     href="tel:+917841007735"
-                    className="inline-flex items-center space-x-2 rounded-full border border-red-500/40 bg-red-500/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-red-200 transition-all duration-200 hover:border-red-400 hover:bg-red-500/20"
+                    className="inline-flex items-center space-x-2 rounded-full border border-blue-300/40 bg-blue-300/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-blue-100 transition-all duration-200 hover:border-amber-200 hover:bg-blue-300/20"
                   >
                     <span>Schedule a call</span>
                   </a>
@@ -114,8 +114,8 @@ export default function ContactForm() {
                           onClick={() => toggleService(service)}
                           className={`cursor-pointer rounded-full border px-3 py-1.5 text-[10px] font-medium tracking-wide transition-all duration-200 sm:text-xs ${
                             isSelected
-                              ? "border-red-300 bg-red-500 text-white shadow-[0_0_18px_rgba(239,68,68,0.35)]"
-                              : "border-zinc-800 bg-[#181111] text-zinc-300 hover:border-red-500/40 hover:text-white"
+                              ? "border-blue-200 bg-blue-400 text-[#1c2226] shadow-[0_0_18px_rgba(76,156,255,0.35)]"
+                              : "border-[#48535a] bg-[#242b30] text-zinc-200 hover:border-blue-300/40 hover:text-white"
                           }`}
                         >
                           {service}
@@ -133,7 +133,7 @@ export default function ContactForm() {
                       required
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full border-b border-zinc-700 bg-transparent py-2.5 text-xs text-white placeholder-zinc-400 outline-none transition-colors focus:border-red-400 sm:text-sm"
+                      className="w-full border-b border-zinc-700 bg-transparent py-2.5 text-xs text-white placeholder-zinc-400 outline-none transition-colors focus:border-blue-300 sm:text-sm"
                     />
                   </div>
                   <div className="space-y-1">
@@ -143,7 +143,7 @@ export default function ContactForm() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full border-b border-zinc-700 bg-transparent py-2.5 text-xs text-white placeholder-zinc-400 outline-none transition-colors focus:border-red-400 sm:text-sm"
+                      className="w-full border-b border-zinc-700 bg-transparent py-2.5 text-xs text-white placeholder-zinc-400 outline-none transition-colors focus:border-blue-300 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -155,12 +155,12 @@ export default function ContactForm() {
                     required
                     value={formData.projectDetails}
                     onChange={(e) => setFormData({ ...formData, projectDetails: e.target.value })}
-                    className="w-full resize-none border-b border-zinc-700 bg-transparent py-2 text-xs text-white placeholder-zinc-400 outline-none transition-colors focus:border-red-400 sm:text-sm"
+                    className="w-full resize-none border-b border-zinc-700 bg-transparent py-2 text-xs text-white placeholder-zinc-400 outline-none transition-colors focus:border-blue-300 sm:text-sm"
                   />
                 </div>
 
                 {isSubmitted && (
-                  <div className="rounded-xl border border-red-500/40 bg-red-500/10 p-3 text-center text-xs font-medium text-red-200">
+                  <div className="rounded-xl border border-blue-300/40 bg-blue-300/10 p-3 text-center text-xs font-medium text-blue-100">
                     Thank you! Your message has been sent successfully.
                   </div>
                 )}
@@ -168,7 +168,7 @@ export default function ContactForm() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center rounded-full bg-red-600 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_10px_25px_rgba(220,38,38,0.28)] transition-all duration-200 hover:bg-red-500 active:scale-[0.99]"
+                    className="inline-flex items-center justify-center rounded-full bg-blue-400 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#1c2226] shadow-[0_10px_25px_rgba(76,156,255,0.28)] transition-all duration-200 hover:bg-amber-300 active:scale-[0.99]"
                   >
                     Send message
                   </button>
@@ -180,12 +180,12 @@ export default function ContactForm() {
 
         <div className="mt-12 text-center sm:mt-16">
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-bold uppercase tracking-[0.24em] text-zinc-400/70 sm:gap-10 sm:text-sm lg:gap-14">
-            <span className="transition-colors hover:text-red-200">React</span>
-            <span className="transition-colors hover:text-red-200">Next.js</span>
-            <span className="transition-colors hover:text-red-200">Tailwind CSS</span>
-            <span className="transition-colors hover:text-red-200">Framer</span>
-            <span className="transition-colors hover:text-red-200">GitHub</span>
-            <span className="transition-colors hover:text-red-200">TypeScript</span>
+            <span className="transition-colors hover:text-blue-200">React</span>
+            <span className="transition-colors hover:text-blue-200">Next.js</span>
+            <span className="transition-colors hover:text-blue-200">Tailwind CSS</span>
+            <span className="transition-colors hover:text-blue-200">Framer</span>
+            <span className="transition-colors hover:text-blue-200">GitHub</span>
+            <span className="transition-colors hover:text-blue-200">TypeScript</span>
           </div>
         </div>
       </div>

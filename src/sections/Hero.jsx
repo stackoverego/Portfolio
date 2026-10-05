@@ -1,9 +1,13 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Navbar from "../components/Navbar";
 
+const WORD_SEQUENCE = ["PARTH", "FORGE", "MERGE", "WIRED", "BURST"];
+
 const Hero = () => {
   const comp = useRef(null);
+  const wordIndexRef = useRef(0);
+  const [wordIndex, setWordIndex] = useState(0);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -18,6 +22,81 @@ const Hero = () => {
           gsap.set(this.targets(), { clearProps: "all" });
         },
       });
+
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const letters = gsap.utils.toArray(".hero-letter");
+        const changingLetters = letters.filter((_, index) => index !== 2);
+        const letterTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.24 });
+
+        letterTimeline
+          .to(letters, {
+            y: -20,
+            rotation: -2,
+            scale: 1.055,
+            duration: 0.34,
+            ease: "power2.out",
+            stagger: { each: 0.18, from: "start" },
+          })
+          .to(letters, {
+            y: 0,
+            rotation: 0,
+            scale: 1,
+            duration: 0.42,
+            ease: "power2.inOut",
+            stagger: { each: 0.18, from: "end" },
+          })
+          .addLabel("wordSwap")
+          .to(
+            changingLetters,
+            {
+              scaleY: 0,
+              opacity: 0,
+              duration: 0.14,
+              ease: "power2.in",
+              stagger: { each: 0.06, from: "start" },
+            },
+            "wordSwap",
+          )
+          .to(
+            letters[2],
+            {
+              rotationY: 360,
+              transformPerspective: 650,
+              filter: "drop-shadow(0 0 16px rgba(239, 92, 92, 0.85))",
+              duration: 0.64,
+              ease: "power2.inOut",
+            },
+            "wordSwap",
+          )
+          .call(
+            () => {
+              wordIndexRef.current = (wordIndexRef.current + 1) % WORD_SEQUENCE.length;
+              setWordIndex(wordIndexRef.current);
+            },
+            null,
+            "wordSwap+=0.32",
+          )
+          .to(
+            changingLetters,
+            {
+              scaleY: 1,
+              opacity: 1,
+              duration: 0.22,
+              ease: "back.out(1.5)",
+              stagger: { each: 0.06, from: "start" },
+            },
+            "wordSwap+=0.64",
+          )
+          .set(
+            letters[2],
+            {
+              rotationY: 0,
+              transformPerspective: 0,
+              filter: "none",
+            },
+            "wordSwap+=1.05",
+          );
+      }
 
       // Looping Sequence
       const tl = gsap.timeline({
@@ -141,11 +220,25 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text-container">
           <h1 className="hero-title">
-            <span className="stretch">PA</span>
-            <span className="r-bg">
-              <span className="fly">R</span>
+            <span className="stretch">
+              {[WORD_SEQUENCE[wordIndex][0], WORD_SEQUENCE[wordIndex][1]].map((letter, index) => (
+                <span className="hero-letter" key={index}>
+                  {letter}
+                </span>
+              ))}
             </span>
-            <span className="stretch">TH</span>
+            <span className="r-bg">
+              <span className="hero-letter">
+                <span className="fly">R</span>
+              </span>
+            </span>
+            <span className="stretch">
+              {[WORD_SEQUENCE[wordIndex][3], WORD_SEQUENCE[wordIndex][4]].map((letter, index) => (
+                <span className="hero-letter" key={index}>
+                  {letter}
+                </span>
+              ))}
+            </span>
           </h1>
         </div>
       </div>
